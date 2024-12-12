@@ -1,8 +1,8 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
-import themeModeReducer from '@/store/themeMode/mode'
+import demoGlobalStateReducer from '@/redux/init/demo'
 
 export const store = configureStore({
-  reducer: themeModeReducer
+  reducer: demoGlobalStateReducer
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

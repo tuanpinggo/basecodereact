@@ -1,15 +1,18 @@
-import { useAppSelector } from "@/store/hook"
-
+import DarkMode from "@/components/ui/darkMode"
+import { ACReduxState } from "@/interfaces/reduxState"
+import { useAppSelector } from "@/redux/hook"
+import { useTranslation } from "react-i18next"
 
 const HelloWorldPage = () => {
     
-    const mode = useAppSelector(state => state.mode)
+    const {t} = useTranslation()
+    const globalState = useAppSelector((state: ACReduxState) => state.ac)
 
-    console.log(mode)
-    
     return(
         <>
-            hello world
+            {t("Hello world")}
+            <div>{globalState}</div>
+            <DarkMode />
         </>
     )
 }
